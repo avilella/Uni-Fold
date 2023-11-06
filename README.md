@@ -74,10 +74,16 @@ docker pull dptechnology/unifold:latest-pytorch1.11.0-cuda11.3
 
 Then, you can create and attach into the docker container, and clone & install unifold.
 
+### Installation on Ubuntu 22.04
 ```bash
-git clone https://github.com/dptech-corp/Uni-Fold
-cd Uni-Fold
+git clone ssh://git@github.com/avilella/Uni-Fold
+cd ~/Uni-Fold
 pip install -e .
+wget https://github.com/dptech-corp/Uni-Core/releases/download/0.0.2/unicore-0.0.1+cu117torch1.13.1-cp310-cp310-linux_x86_64.whl
+pip3 -q install "unicore-0.0.1+cu117torch1.13.1-cp310-cp310-linux_x86_64.whl"
+sudo apt install hmmer hhsuite
+wget http://archive.ubuntu.com/ubuntu/pool/universe/k/kalign/kalign_3.3.5-1_amd64.deb
+sudo dpkg -i kalign_3.3.5-1_amd64.deb
 ```
 
 ### Preparing the datasets
